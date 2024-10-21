@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe QR Code Scanned</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d4edda;
+            color: #155724;
+            text-align: center;
+            padding: 50px;
+        }
+        .alert-box {
+            padding: 20px;
+            background-color: #c3e6cb;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+            display: inline-block;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .loading {
+            margin-top: 30px;
+            color: #28a745;
+            font-size: 22px;
+        }
+        .info-line {
+            font-size: 18px;
+            margin-top: 10px;
+            display: none;
+        }
+        .info-line.visible {
+            display: block;
+        }
+        .checkmark {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong-users {
+            color: red;
+            margin-top: 30px;
+        }
+        .wrong-users .sad-face {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>You've Scanned a Valid QR Code</h1>
+    <div class="alert-box">
+        Your data is safe! Let's see what makes this code the right choice...
+    </div>
+    <div class="loading" id="loading">Checking data integrity...</div>
+
+    <div id="validation" class="info-line">Data integrity verified <span class="checkmark">✔</span></div>
+    <div id="secure-connection" class="info-line">Secure connection established <span class="checkmark">✔</span></div>
+    <div id="privacy" class="info-line">Your privacy is protected <span class="checkmark">✔</span></div>
+
+    <div class="wrong-users" id="wrong-users" style="display: none;">
+        <h2>Meanwhile, users who scanned the wrong QR code are facing:</h2>
+        <p><span class="sad-face">😢</span> Personal data theft</p>
+        <p><span class="sad-face">😢</span> Exposure of sensitive information</p>
+        <p><span class="sad-face">😢</span> Ongoing quishing attack...</p>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById("loading").textContent = "Verifying your secure choice...";
+        }, 2000);
+
+        setTimeout(function() {
+            document.getElementById("validation").classList.add("visible");
+        }, 3000);
+
+        setTimeout(function() {
+            document.getElementById("secure-connection").classList.add("visible");
+        }, 4500);
+
+        setTimeout(function() {
+            document.getElementById("privacy").classList.add("visible");
+        }, 6000);
+
+        setTimeout(function() {
+            document.getElementById("wrong-users").style.display = "block";
+        }, 7500);
+
+        setTimeout(function() {
+            alert("This has been an example of how sensitive QR code safety truly is. Listen closely for today's safety message!");
+        }, 9000);
+    </script>
+</body>
+</html>
