@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning: Data at Risk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d7da;
+            color: #721c24;
+            text-align: center;
+            padding: 50px;
+        }
+        .alert-box {
+            padding: 20px;
+            background-color: #f5c6cb;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+            display: inline-block;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .loading {
+            margin-top: 30px;
+            color: #dc3545;
+            font-size: 22px;
+        }
+        .info-line {
+            font-size: 18px;
+            margin-top: 10px;
+            display: none;
+        }
+        .info-line.visible {
+            display: block;
+        }
+        .checkmark {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Uh-oh! Your data is being stolen!</h1>
+    <div class="alert-box">
+        We are retrieving your personal information...
+    </div>
+    <div class="loading" id="loading">Loading...</div>
+
+    <div id="name" class="info-line">Name: John Doe <span class="checkmark">✔</span></div>
+    <div id="entergy-id" class="info-line">Entergy ID: jdoe1 <span class="checkmark">✔</span></div>
+    <div id="passwords" class="info-line">Passwords: ******** <span class="checkmark">✔</span></div>
+    <div id="credit-card" class="info-line">Credit Card: 1234 5678 9098 7654 <span class="checkmark">✔</span></div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById("loading").textContent = "Capturing information...";
+        }, 2000);
+
+        setTimeout(function() {
+            document.getElementById("name").classList.add("visible");
+        }, 3000);
+
+        setTimeout(function() {
+            document.getElementById("entergy-id").classList.add("visible");
+        }, 4500);
+
+        setTimeout(function() {
+            document.getElementById("passwords").classList.add("visible");
+        }, 6000);
+
+        setTimeout(function() {
+            document.getElementById("credit-card").classList.add("visible");
+        }, 7500);
+
+        setTimeout(function() {
+            alert("This has been an example of a quishing attack. Listen to today's safety message to learn more.");
+        }, 9000);
+    </script>
+</body>
+</html>
